@@ -3,20 +3,17 @@ package trabqualidadeteste;
 public class TrabQualidadeTeste {
 
     public static void main(String[] args) {
-        int key = 6;
-        int[] itens = {1,2,5,6,8,9};
+        int key = 5;
+        int[] itens = {1,2,5,6,8};
         int size = itens.length;
-        boolean ascending = true;
-        SearchType type = SearchType.LessThanEquals;
+        boolean ascending = false;
+        SearchType type = SearchType.Equals;
         ResultType result = new ResultType();
+        result.ReturnType(ResultType.SearchResult.NotFound, null, null);
         
         BuscaVetor.busca(type, itens, size, key, result, ascending);
-        if (ascending) {
-            System.out.println("Ordenado crescente");
-        }else{
-            System.out.println("Ordenado decrescente");
-        }
         System.out.println(type);
         System.out.println(result);
+        System.out.println("Crescente? "+ascending);
     }
 }
